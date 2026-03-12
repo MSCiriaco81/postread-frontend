@@ -70,8 +70,9 @@ export default function ProfilePage() {
           <hr className="rule" />
           <div className={styles.editFields}>
             <div className={styles.editField}>
-              <label className={styles.label}>Bio</label>
+              <label htmlFor="edit-bio" className={styles.label}>Bio</label>
               <textarea
+                id="edit-bio"
                 className={styles.input}
                 value={bio}
                 onChange={e => setBio(e.target.value)}
@@ -80,8 +81,9 @@ export default function ProfilePage() {
               />
             </div>
             <div className={styles.editField}>
-              <label className={styles.label}>URL da foto de perfil</label>
+              <label htmlFor="edit-photo" className={styles.label}>URL da foto de perfil</label>
               <input
+                id="edit-photo"
                 className={styles.input}
                 value={photoUrl}
                 onChange={e => setPhotoUrl(e.target.value)}
