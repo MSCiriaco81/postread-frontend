@@ -1,0 +1,65 @@
+.page { display: flex; flex-direction: column; gap: var(--space-6); max-width: 700px; }
+.header { display: flex; flex-direction: column; gap: var(--space-3); }
+.rule { width: 48px; height: 3px; background: var(--accent); border-radius: 2px; }
+.titleRow { display: flex; align-items: center; justify-content: space-between; }
+
+.list { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.entry {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+}
+.entryMain { flex: 1; display: flex; flex-direction: column; gap: var(--space-2); }
+.entryMeta { display: flex; align-items: center; gap: var(--space-3); }
+
+.bookId {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.metrics { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: .2rem .6rem;
+  background: var(--paper-2);
+  border-radius: 20px;
+  font-size: .75rem;
+  font-family: var(--font-mono);
+  color: var(--ink-3);
+}
+.stars { display: flex; gap: 1px; color: var(--accent-warm); }
+.notes { font-size: .8rem; color: var(--ink-3); font-style: italic; line-height: 1.5; }
+
+.deleteBtn {
+  color: var(--ink-4);
+  padding: .25rem;
+  border-radius: var(--radius);
+  transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+  flex-shrink: 0;
+}
+.deleteBtn:hover { color: var(--accent); background: rgba(192,57,43,.08); }
+
+.empty {
+  text-align: center;
+  padding: var(--space-16) var(--space-8);
+  display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
+}
+
+/* Modal */
+.overlay { position: fixed; inset: 0; background: rgba(26,22,18,.55); backdrop-filter: blur(4px); z-index: 200; display: flex; align-items: center; justify-content: center; }
+.modal { background: var(--cream); border-radius: var(--radius-lg); padding: var(--space-8); width: 100%; max-width: 520px; box-shadow: var(--shadow-lg); animation: fadeUp .25s var(--ease); max-height: 90vh; overflow-y: auto; }
+.modalForm { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-4); }
+.row { display: flex; gap: var(--space-4); }
+.actions { display: flex; gap: var(--space-3); justify-content: flex-end; padding-top: var(--space-2); }
+.label { font-size: .78rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.input { padding: .6rem .875rem; border: 1.5px solid var(--paper-3); border-radius: var(--radius); font-size: .9375rem; outline: none; background: var(--paper); font-family: inherit; width: 100%; transition: border-color var(--dur); }
+.input:focus { border-color: var(--ink); }
+.suggestions { border: 1.5px solid var(--paper-3); border-radius: var(--radius); margin-top: .25rem; overflow: hidden; }
+.suggestion { display: block; width: 100%; text-align: left; padding: .6rem .875rem; font-size: .875rem; transition: background var(--dur); border-bottom: 1px solid var(--paper-3); background: var(--paper); }
+.suggestion:last-child { border-bottom: none; }
+.suggestion:hover, .selected { background: var(--paper-2); }

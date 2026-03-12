@@ -1,0 +1,85 @@
+.page { display: flex; flex-direction: column; gap: var(--space-6); max-width: 900px; }
+.header { display: flex; flex-direction: column; gap: var(--space-3); }
+.rule { width: 48px; height: 3px; background: var(--accent); border-radius: 2px; }
+.titleRow { display: flex; align-items: center; justify-content: space-between; }
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--paper);
+  border: 1.5px solid var(--paper-3);
+  border-radius: var(--radius-lg);
+  padding: .5rem .75rem .5rem 1rem;
+  transition: border-color var(--dur) var(--ease);
+}
+.searchBar:focus-within { border-color: var(--ink); }
+.searchIcon { color: var(--ink-4); flex-shrink: 0; }
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: .9375rem;
+  color: var(--ink);
+  outline: none;
+}
+.searchInput::placeholder { color: var(--ink-4); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+}
+
+.bookCard { display: flex; flex-direction: column; gap: var(--space-3); padding: 0; overflow: hidden; }
+.cover { width: 100%; height: 140px; overflow: hidden; background: var(--paper-2); }
+.coverImg { width: 100%; height: 100%; object-fit: cover; }
+.coverPlaceholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-4);
+}
+.bookInfo { padding: var(--space-3) var(--space-3) var(--space-4); display: flex; flex-direction: column; gap: .25rem; }
+.bookTitle {
+  font-family: var(--font-serif);
+  font-size: .95rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ink);
+}
+.bookAuthor { font-size: .8rem; color: var(--ink-3); }
+.genre {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(192,57,43,.08);
+  padding: .2rem .5rem;
+  border-radius: 2px;
+  width: fit-content;
+  margin-top: .25rem;
+}
+
+/* Modal */
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(26,22,18,.55);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn .2s var(--ease);
+}
+.modal {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  width: 100%;
+  max-width: 520px;
+  box-shadow: var(--shadow-lg);
+  animation: fadeUp .25s var(--ease);
+}
+.modalForm { display: flex; flex-direction: column; gap: var(--space-4); }
+.row { display: flex; gap: var(--space-4); }
+.modalActions { display: flex; gap: var(--space-3); justify-content: flex-end; padding-top: var(--space-2); }

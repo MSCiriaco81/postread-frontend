@@ -1,0 +1,102 @@
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* Left decoration panel */
+.decoration {
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-16);
+  position: relative;
+  overflow: hidden;
+}
+
+.decorLines {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 60px,
+      rgba(250,247,243,.03) 60px,
+      rgba(250,247,243,.03) 61px
+    );
+}
+
+.quote {
+  position: relative;
+  z-index: 1;
+  border-left: 3px solid var(--accent);
+  padding-left: var(--space-6);
+}
+.quote span {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--cream);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+}
+.quote cite {
+  font-size: .875rem;
+  color: rgba(250,247,243,.45);
+  font-style: normal;
+  letter-spacing: .04em;
+}
+
+/* Right form panel */
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+  background: var(--cream);
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.brandIcon {
+  width: 36px; height: 36px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+}
+.brandName {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.head { display: flex; flex-direction: column; gap: var(--space-2); }
+
+.fields { display: flex; flex-direction: column; gap: var(--space-4); }
+
+/* Switch */
+.switch { text-align: center; font-size: .9rem; color: var(--ink-3); }
+.switchLink { color: var(--accent); font-weight: 500; }
+.switchLink:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .page { grid-template-columns: 1fr; }
+  .decoration { display: none; }
+}
